@@ -1,0 +1,19 @@
+{
+  "name": "cli-hangman",
+  "version": "1.0.0",
+  "description": "Hang Man Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markverbeck/cli-hangman.git"
+  },
+  "author": "Mark Verbeck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markverbeck/cli-hangman/issues"
+  },
+  "homepage": "https://github.com/markverbeck/cli-hangman#readme"
+}
