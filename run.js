@@ -8,13 +8,10 @@ var gameEnd = false;
 var currentWord = [];
 
 
-// letter.slayer.dash();
-// console.log(letter.slayer.question);
 
-// Computer's choice of word..
 var computerChoice = function(){
 	var random = Math.floor(Math.random() * 4);
-	currentWord = [];
+	
 	if(random === 0){
 		wordChoice = letter.slayerName;
 		letter.slayer.dash();
@@ -41,7 +38,7 @@ var computerChoice = function(){
 	}
 };
 
-// compare choice and letters..
+
 var compare = function(letter){
 	if(wordChoice === "slayer"){
 		switch(letter){
@@ -274,38 +271,40 @@ var choice = function(){
 			win();
 			lose();
 			if(gameEnd === true){
-				// playAgain();
-				console.log("Thanks for Playing!");
+				playAgain();
+				
 			}else if(gameEnd === false){
 				choice();
 			};
 		});
 };
 
-// var playAgain = function(){
-// 	inquirer.prompt([
-// 			{
-// 				message: "Play Again? y or n?",
-// 				type: "input",
-// 				name: "playAgain"
+var playAgain = function(){
+	inquirer.prompt([
+			{
+				message: "Play Again?",
+				type: "confirm",
+				name: "playAgain"
 
-// 			}
-// 		]).then(function(response){
-// 			if(response.playAgain === "y" || "Y"){
-// 				currentWord = [];
-// 				gameEnd = false;
-// 				wordChoice = "";
-// 				wrongAnswers = 5;
-// 				picked = [];
-// 				wordStatus = "";
-// 				computerChoice();
-// 				choice();
+			}
+		]).then(function(response){
+			if(response.playAgain === true){
+				currentWord.length = 0;
+				gameEnd = false;
+				wordChoice = "";
+				wrongAnswers = 5;
+				picked.length = 0;
+				wordStatus = "";
+				computerChoice();
+				choice();
 
-// 			}else if (response.playAgain === "n" || "N"){
-// 				console.log("Thanks for Playing!!");
-// 			}
-// 		});
-// };
+				
+
+			}else{
+				console.log("Thanks for Playing!!");
+			}
+		});
+};
 
 
 inquirer.prompt([
